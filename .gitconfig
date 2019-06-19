@@ -1,0 +1,9 @@
+[user]
+  name = Roberto Arosemena
+  email = arosemenae@gmail.com
+  username = arosemena
+[core]
+  editor = vim
+[alias]
+  pr = pull --rebase
+  wipe = reset HEAD --hard
