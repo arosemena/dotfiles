@@ -4,14 +4,14 @@ LANG=en_US.utf8
 
 PS1=" 🔱 > "
 
-# Go env variables
-export GOPATH="$HOME/dev/go"
-export GOROOT="/usr/local/opt/go/libexec"
-export PATH="$PATH:$GOPATH/bin"
-export PATH="$PATH:$GOROOT/bin"
-
 # Change to bash style word deletes
 autoload -U select-word-style
 select-word-style bash
 
-source "$HOME/.envrc"
+# General aliases
+alias vimi="vim +'PlugInstall --sync' +qa"
+
+# Anything that is specific to this host should be in .envrc
+if [ -f "$HOME/.envrc" ]; then
+  source "$HOME/.envrc"
+fi

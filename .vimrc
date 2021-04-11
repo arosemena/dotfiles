@@ -19,7 +19,21 @@ set encoding=utf-8
 " Color scheme
 colorscheme robscheme
 
-" Load host specific settings
-if filereadable(expand("$HOME/.vim/env/settings.vim"))
-  source $HOME/.vim/env/settings.vim
-endif
+" Plugins
+call plug#begin('~/.vim/plugged')
+
+" Webdev plugins
+Plug 'pangloss/vim-javascript'    
+Plug 'leafgarland/typescript-vim' 
+Plug 'maxmellon/vim-jsx-pretty'   
+Plug 'jparise/vim-graphql'        
+Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+" Enable Typescript helpers
+let g:coc_global_extensions = [ 'coc-tsserver' ]
