@@ -4,6 +4,9 @@ nmap <Right> <Nop>
 nmap <Down> <Nop>
 nmap <Left> <Nop>
 
+" Keymaps
+nnoremap <silent> <C-N> :Files<CR>
+
 " Settings
 syntax on
 set nocompatible
@@ -15,6 +18,14 @@ set number relativenumber
 set hlsearch
 set pastetoggle=<F3>
 set encoding=utf-8
+
+" fzf settings
+set rtp+=/usr/local/opt/fzf
+let g:fzf_action = {
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-i': 'split',
+    \ 'ctrl-s': 'vsplit'
+    \ }
 
 " Color scheme
 colorscheme robscheme

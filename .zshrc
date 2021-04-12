@@ -11,6 +11,12 @@ select-word-style bash
 # General aliases
 alias vimi="vim +'PlugInstall --sync' +qa"
 
+# Configure fzf to use ripgrep
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
+
 # Anything that is specific to this host should be in .envrc
 if [ -f "$HOME/.envrc" ]; then
   source "$HOME/.envrc"

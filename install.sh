@@ -19,8 +19,9 @@ copy_if_not_there ".zshrc" # zsh
 copy_if_not_there ".psqlrc" # psql
 copy_if_not_there ".gitconfig" # git
 copy_if_not_there ".hushlogin" # hush!
+copy_if_not_there "kitty.conf" # kitty settings
 copy_if_not_there ".vimrc" # vim settings
-copy_if_not_there ".vim" # vim setting
+copy_if_not_there ".vim" # vim settings
 
 # Install vim plug
 echo -e "\n 🤖 Installing vim plugins"
