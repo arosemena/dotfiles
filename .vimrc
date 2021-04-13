@@ -6,6 +6,11 @@ nmap <Left> <Nop>
 
 " Keymaps
 nnoremap <silent> <C-N> :Files<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <F2> <Plug>(coc-diagnostic-next)
 
 " Settings
 syntax on
@@ -33,10 +38,7 @@ colorscheme nova
 call plug#begin('~/.vim/plugged')
 
 " Webdev plugins
-Plug 'pangloss/vim-javascript'    
-Plug 'leafgarland/typescript-vim' 
-Plug 'maxmellon/vim-jsx-pretty'   
-Plug 'jparise/vim-graphql'        
+Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 
 " fzf
@@ -48,9 +50,9 @@ call plug#end()
 " Enable Typescript helpers
 let g:coc_global_extensions = [ 'coc-tsserver' ]
 
+" Function to detect highlight groups
 function! SynGroup()                                                            
     let l:s = synID(line('.'), col('.'), 1)                                       
     echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
-
 nnoremap <silent> <F3> :call SynGroup()<CR>

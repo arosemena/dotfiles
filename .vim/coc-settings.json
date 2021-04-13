@@ -1,4 +1,6 @@
 {
   "tsserver.npm": "/usr/local/bin/npm",
-  "tsserver.node": "/usr/local/bin/node"
+  "tsserver.node": "/usr/local/bin/node",
+  "diagnostic.errorSign": "🔥",
+  "diagnostic.warningSign": "🌝"
 }

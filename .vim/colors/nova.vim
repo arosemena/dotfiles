@@ -17,6 +17,7 @@ let g:colors_name = "nova"
 " 160 Red
 " 220 Yellow
 " 230 Dark grey
+" 254 Light
 
 hi Statement      ctermfg=33
 hi Comment        ctermfg=101
@@ -25,7 +26,7 @@ hi String			    ctermfg=220
 hi Number         ctermfg=99
 hi Constant       ctermfg=99
 hi Function       ctermfg=160
-hi PMenu          ctermbg=239
+hi PMenu          ctermbg=239 ctermfg=254
 hi VertSplit      cterm=None
 
 " JS specific settings
