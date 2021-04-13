@@ -12,6 +12,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <F2> <Plug>(coc-diagnostic-next)
 
+nmap <C-k> :!date > /tmp/time<kEnter><kEnter>
+
 " Settings
 syntax on
 set nocompatible
