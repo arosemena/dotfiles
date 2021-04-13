@@ -25,11 +25,6 @@ set encoding=utf-8
 
 " fzf settings
 set rtp+=/usr/local/opt/fzf
-let g:fzf_action = {
-    \ 'ctrl-t': 'tab split',
-    \ 'ctrl-i': 'split',
-    \ 'ctrl-s': 'vsplit'
-    \ }
 
 " Color scheme
 colorscheme nova
@@ -38,7 +33,9 @@ colorscheme nova
 call plug#begin('~/.vim/plugged')
 
 " Webdev plugins
-Plug 'sheerun/vim-polyglot'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'othree/yajs.vim'
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 
 " fzf
@@ -48,7 +45,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Enable Typescript helpers
-let g:coc_global_extensions = [ 'coc-tsserver' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-eslint' ]
 
 " Function to detect highlight groups
 function! SynGroup()                                                            

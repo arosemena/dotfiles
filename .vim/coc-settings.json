@@ -1,6 +1,10 @@
 {
   "tsserver.npm": "/usr/local/bin/npm",
   "tsserver.node": "/usr/local/bin/node",
+
+  "eslint.filetypes": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+  "eslint.autoFixOnSave": true,
+
   "diagnostic.errorSign": "🔥",
   "diagnostic.warningSign": "🌝"
 }
