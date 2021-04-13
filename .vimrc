@@ -14,7 +14,6 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set number relativenumber
 set hlsearch
 set pastetoggle=<F3>
 set encoding=utf-8
@@ -28,7 +27,7 @@ let g:fzf_action = {
     \ }
 
 " Color scheme
-colorscheme robscheme
+colorscheme nova
 
 " Plugins
 call plug#begin('~/.vim/plugged')
@@ -48,3 +47,10 @@ call plug#end()
 
 " Enable Typescript helpers
 let g:coc_global_extensions = [ 'coc-tsserver' ]
+
+function! SynGroup()                                                            
+    let l:s = synID(line('.'), col('.'), 1)                                       
+    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
+
+nnoremap <silent> <F3> :call SynGroup()<CR>
