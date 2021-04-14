@@ -2,9 +2,12 @@
   "tsserver.npm": "/usr/local/bin/npm",
   "tsserver.node": "/usr/local/bin/node",
 
+  "javascript.suggestionActions.enabled": false,
+
   "eslint.filetypes": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   "eslint.autoFixOnSave": true,
 
   "diagnostic.errorSign": "🔥",
-  "diagnostic.warningSign": "🌝"
+  "diagnostic.warningSign": "🌝",
+  "diagnostic.infoSign": "👉"
 }

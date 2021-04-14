@@ -17,6 +17,9 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
+# to make kitty work with ssh
+TERM=xterm-256color
+
 # Anything that is specific to this host should be in .envrc
 if [ -f "$HOME/.envrc" ]; then
   source "$HOME/.envrc"

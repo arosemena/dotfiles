@@ -28,11 +28,9 @@ hi Constant       ctermfg=99
 hi Function       ctermfg=160
 hi PMenu          ctermbg=239 ctermfg=254
 hi VertSplit      cterm=None
+hi SignColumn     ctermbg=None
 
 " JS specific settings
 hi jsVariableDef  ctermfg=119
 hi jsFuncArgs     ctermfg=99
 hi jsRegexpString ctermfg=99
-
-" CoC specific settings
-hi CocErrorSign ctermfg=160 ctermbg=88

@@ -1,8 +1,13 @@
+" Use comma as leader
+let mapleader=","
+
 " Disable arrow keys
 nmap <Up> <Nop>
 nmap <Right> <Nop>
 nmap <Down> <Nop>
 nmap <Left> <Nop>
+
+nmap <leader>s :w<CR>
 
 " Keymaps
 nnoremap <silent> <C-N> :Files<CR>
@@ -11,7 +16,15 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <F2> <Plug>(coc-diagnostic-next)
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+nnoremap <C-t> :NERDTreeToggle<CR>
+
+
+" This triggers file watchers on /tmp/time
+" serves as a proxy to running things like tests
+" in another screen and triggering them without 
+" leaving the current vim window
 nmap <C-k> :!date > /tmp/time<kEnter><kEnter>
 
 " Settings
@@ -39,10 +52,13 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'othree/yajs.vim'
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+Plug 'mattn/emmet-vim'
 
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
