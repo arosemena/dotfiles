@@ -16,7 +16,7 @@ let g:colors_name = "nova"
 " 119 Green
 " 160 Red
 " 220 Yellow
-" 230 Dark grey
+" 239 Dark grey
 " 254 Light
 
 hi Statement      ctermfg=33
@@ -27,8 +27,13 @@ hi Number         ctermfg=99
 hi Constant       ctermfg=99
 hi Function       ctermfg=160
 hi PMenu          ctermbg=239 ctermfg=254
-hi VertSplit      cterm=None
+hi VertSplit      ctermfg=239 cterm=None
 hi SignColumn     ctermbg=None
+hi TabLineFill    ctermbg=239 cterm=None
+hi TabLine        ctermbg=239 cterm=None
+hi TabLineSel     ctermbg=0   ctermfg=33
+hi StatusLine     ctermbg=239 cterm=bold
+hi StatusLineNC   ctermbg=239 cterm=None
 
 " JS specific settings
 hi jsVariableDef  ctermfg=119

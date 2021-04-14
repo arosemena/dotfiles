@@ -4,7 +4,7 @@ LANG=en_US.utf8
 
 PS1=" 🔱 > "
 
-# Change to bash style word deletes
+autoload -Uz compinit && compinit
 autoload -U select-word-style
 select-word-style bash
 
@@ -17,8 +17,6 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-# to make kitty work with ssh
-TERM=xterm-256color
 
 # Anything that is specific to this host should be in .envrc
 if [ -f "$HOME/.envrc" ]; then

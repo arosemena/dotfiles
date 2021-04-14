@@ -7,10 +7,13 @@ nmap <Right> <Nop>
 nmap <Down> <Nop>
 nmap <Left> <Nop>
 
-nmap <leader>s :w<CR>
+"Indent, save and go back in place
+nmap <leader>s gg=G:w<CR>``
 
 " Keymaps
 nnoremap <silent> <C-N> :Files<CR>
+nnoremap <silent> <leader>f :Ag<CR>
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -37,6 +40,7 @@ set shiftwidth=2
 set hlsearch
 set pastetoggle=<F3>
 set encoding=utf-8
+set fillchars=vert:\│,stlnc:\─
 
 " fzf settings
 set rtp+=/usr/local/opt/fzf
@@ -67,7 +71,7 @@ let g:coc_global_extensions = [ 'coc-tsserver', 'coc-eslint' ]
 
 " Function to detect highlight groups
 function! SynGroup()                                                            
-    let l:s = synID(line('.'), col('.'), 1)                                       
-    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+  let l:s = synID(line('.'), col('.'), 1)                                       
+  echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
 nnoremap <silent> <F3> :call SynGroup()<CR>
