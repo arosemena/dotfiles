@@ -39,3 +39,11 @@ hi StatusLineNC   ctermbg=239 cterm=None
 hi jsVariableDef  ctermfg=119
 hi jsFuncArgs     ctermfg=99
 hi jsRegexpString ctermfg=99
+
+" GitGutter settings
+hi GitGutterAdd    ctermbg=None ctermfg=119
+hi GitGutterDelete ctermbg=None ctermfg=160
+hi GitGutterChange ctermbg=None ctermfg=33
+
+" NerdTree
+hi cursorLine      ctermbg=239 cterm=None

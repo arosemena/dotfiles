@@ -19,6 +19,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <F2> <Plug>(coc-diagnostic-next)
+nmap <silent> <F10> :CocCommand prettier.formatFile<CR>
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -31,7 +32,9 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nmap <C-k> :!date > /tmp/time<kEnter><kEnter>
 
 " Settings
-syntax on
+if !exists('g:syntax_on')
+	syntax enable
+endif
 set nocompatible
 set expandtab
 set tabstop=2
@@ -63,11 +66,23 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'preservim/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+Plug 'vim-airline/vim-airline'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
 " Enable Typescript helpers
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-eslint' ]
+
+" Airline configs
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#enabled=1
+let airline#extensions#coc#stl_format_err = ''
+let airline#extensions#coc#error_symbol = '🔥'
 
 " Function to detect highlight groups
 function! SynGroup()                                                            
