@@ -79,7 +79,6 @@ let g:coc_global_extensions = [ 'coc-tsserver', 'coc-eslint' ]
 
 " Airline configs
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#branch#enabled=1
 let airline#extensions#coc#stl_format_err = ''
 let airline#extensions#coc#error_symbol = '🔥'
