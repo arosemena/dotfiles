@@ -19,7 +19,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <F2> <Plug>(coc-diagnostic-next)
-nmap <silent> <F10> :CocCommand prettier.formatFile<CR>
+nmap <silent> P :CocCommand prettier.formatFile<CR>
+nmap <silent> <O> :CocCommand tsserver.organizeImports<CR>
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -61,6 +62,8 @@ Plug 'othree/yajs.vim'
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 Plug 'mattn/emmet-vim'
 
+Plug 'rust-lang/rust.vim'
+
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -74,8 +77,11 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-" Enable Typescript helpers
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-eslint' ]
+" Enable CoC helpers
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-eslint', 'coc-rust-analyzer' ]
+
+" Rust settings
+let g:rustfmt_autosave = 1
 
 " Airline configs
 let g:airline_powerline_fonts = 1
