@@ -22,6 +22,7 @@ copy_if_not_there ".hushlogin" # hush!
 copy_if_not_there "kitty.conf" # kitty settings
 copy_if_not_there ".vimrc" # vim settings
 copy_if_not_there ".vim" # vim settings
+copy_if_not_there ".taskrc" # taskwarrior
 
 # Install vim plug
 echo -e "\n 🤖 Installing vim plugins"
