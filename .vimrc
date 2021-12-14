@@ -58,11 +58,6 @@ call plug#begin('~/.vim/plugged')
 " Webdev plugins
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'othree/yajs.vim'
-Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
-Plug 'mattn/emmet-vim'
-
-Plug 'rust-lang/rust.vim'
 
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -77,21 +72,6 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-" Enable CoC helpers
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-eslint', 'coc-rust-analyzer' ]
-
-" Rust settings
-let g:rustfmt_autosave = 1
-
 " Airline configs
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled=1
-let airline#extensions#coc#stl_format_err = ''
-let airline#extensions#coc#error_symbol = '🔥'
-
-" Function to detect highlight groups
-function! SynGroup()                                                            
-  let l:s = synID(line('.'), col('.'), 1)                                       
-  echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
-endfun
-nnoremap <silent> <F3> :call SynGroup()<CR>
