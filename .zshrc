@@ -12,7 +12,8 @@ select-word-style bash
 alias vimi="vim +'PlugInstall --sync' +qa"
 
 alias x="source ~/dev/swx/switch.sh"
-alias vimx="~/dev/swx/vimx.sh"
+alias xd="cd ~/dev/swx/books"
+alias vimx="~/dev/swx/vimx.sh && source ~/dev/swx/load.sh"
 
 # Configure fzf to use ripgrep
 if type rg &> /dev/null; then
