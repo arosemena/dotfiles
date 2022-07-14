@@ -23,6 +23,7 @@ copy_if_not_there "kitty.conf" # kitty settings
 copy_if_not_there ".vimrc" # vim settings
 copy_if_not_there ".vim" # vim settings
 copy_if_not_there ".taskrc" # taskwarrior
+copy_if_not_there ".tmux.conf" # tmux
 
 # Install vim plug
 echo -e "\n 🤖 Installing vim plugins"
