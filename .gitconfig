@@ -1,9 +1,17 @@
 [user]
   name = Roberto Arosemena
-  email = arosemenae@gmail.com
+	email = robert@lotus.mx
   username = arosemena
+	signingkey = CA9A53A5C38DB7D2
 [core]
   editor = vim
+	autocrlf = input
 [alias]
   pr = pull --rebase
   wipe = reset HEAD --hard
+[init]
+	defaultBranch = master
+[commit]
+	gpgsign = true
+[pull]
+	rebase = false
