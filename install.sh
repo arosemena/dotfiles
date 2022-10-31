@@ -20,15 +20,13 @@ copy_if_not_there ".psqlrc" # psql
 copy_if_not_there ".gitconfig" # git
 copy_if_not_there ".hushlogin" # hush!
 copy_if_not_there "kitty.conf" # kitty settings
-copy_if_not_there ".vimrc" # vim settings
-copy_if_not_there ".vim" # vim settings
 copy_if_not_there ".taskrc" # taskwarrior
 copy_if_not_there ".tmux.conf" # tmux
+copy_if_not_there ".config/nvim" # neovim
 
-# Install vim plug
-echo -e "\n 🤖 Installing vim plugins"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &> /dev/null
-vim +'PlugInstall --sync' +qa
+# Install Packer
+echo -e "\n 🤖 Installing nvim Packer"
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 echo -e "\n ✅ All done! \n"
