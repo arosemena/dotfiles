@@ -1,3 +1,3 @@
 # dotfiles 🤓
 
-To install run `./install.sh`
+To install run `stow .` from within this directory

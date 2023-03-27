@@ -6,11 +6,8 @@
 [core]
   editor = vim
 	autocrlf = input
-[alias]
-  pr = pull --rebase
-  wipe = reset HEAD --hard
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [commit]
 	gpgsign = true
 [pull]
