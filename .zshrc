@@ -19,6 +19,10 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/tools/bin:$PATH"
 
 # Load env variables for the system
 [ -s "$HOME/.env" ] && source "$HOME/.env"
@@ -38,6 +42,10 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+set -o vi
 
 alias week="cd ~/dev/data && node week"
 alias year="cd ~/dev/data && node year"
