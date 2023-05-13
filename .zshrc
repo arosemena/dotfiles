@@ -51,6 +51,8 @@ alias week="cd ~/dev/data && node week"
 alias year="cd ~/dev/data && node year"
 alias g="cd ~/dev/data && node goal"
 
+alias clean-branches="git branch --merged | egrep -v \"(main|master|staging)\" | xargs git branch -d"
+
 listening() {
     if [ $# -eq 0 ]; then
         sudo lsof -iTCP -sTCP:LISTEN -n -P
@@ -62,3 +64,11 @@ listening() {
 }
 
 alias vim="nvim"
+
+# pnpm
+export PNPM_HOME="/Users/rob/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -16,6 +16,8 @@ return require('packer').startup(function(use)
   use('tpope/vim-fugitive')
   use('airblade/vim-gitgutter')
   use('github/copilot.vim')
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
 
   use {
     'VonHeikemen/lsp-zero.nvim',

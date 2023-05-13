@@ -15,12 +15,27 @@ lsp.configure('lua-language-server', {
 -- Adds eslint fix step to formatting keymap
 lsp.configure('eslint', {
   on_attach = function(_, bufnr)
+    local enablePrettier = vim.fn.filereadable('prettier.config.js')
     local opts = { buffer = bufnr, remap = false }
     vim.keymap.set('n', '<leader>l', function()
       vim.lsp.buf.format()
       vim.cmd('EslintFixAll')
+      if enablePrettier then
+        vim.cmd('Prettier')
+      end
     end, opts)
   end
+})
+
+-- Change vue lsp settings
+lsp.configure('vue-language-server', {
+  settings = {
+    volar = {
+      formatting = {
+        printWidth = 80,
+      }
+    }
+  }
 })
 
 
