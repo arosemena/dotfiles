@@ -19,12 +19,21 @@ lsp.configure('eslint', {
     vim.keymap.set('n', '<leader>l', function()
       vim.cmd('EslintFixAll')
       vim.lsp.buf.format()
-      vim.cmd('Prettier')
     end, opts)
-    vim.keymap.set('n', '<leader>ll', function()
-      vim.lsp.buf.format()
-      vim.cmd('Prettier')
-    end, opts)
+  end
+})
+
+lsp.configure('tsserver', {
+  on_attach = function(_, bufnr)
+    local hasPrettier = vim.fn.filereadable('.prettierrc')
+    if hasPrettier then
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        buffer = bufnr,
+        callback = function()
+          vim.cmd.Prettier()
+        end
+      })
+    end
   end
 })
 

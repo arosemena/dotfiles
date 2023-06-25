@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
   use('github/copilot.vim')
   use('jose-elias-alvarez/null-ls.nvim')
   use('MunifTanjim/prettier.nvim')
+  use('rust-lang/rust.vim')
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -38,7 +39,6 @@ return require('packer').startup(function(use)
 
       -- Snippets
       {'L3MON4D3/LuaSnip'},             -- Required
-      {'rafamadriz/friendly-snippets'}, -- Optional
     }
   }
 end)
