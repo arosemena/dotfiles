@@ -15,6 +15,8 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 vim.keymap.set('v', '<leader>y', '"*y', {}) -- yank to system clipboard
 
+vim.keymap.set('n', '<leader>w', ':w<CR>')
+
 -- Close quickfix window with <CR>
 vim.api.nvim_create_autocmd(
   'FileType', {
