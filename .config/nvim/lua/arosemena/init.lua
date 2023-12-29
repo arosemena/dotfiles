@@ -1,6 +1,7 @@
-require('arosemena.remap')
-require('arosemena.packer')
-require('arosemena.set')
+require 'arosemena.keymaps'
+require 'arosemena.lazy'
+require 'arosemena.set'
+require 'arosemena.autocmds'
+require 'arosemena.lsp'
 
--- Lua
-vim.cmd('colorscheme rose-pine')
+vim.cmd 'colorscheme rose-pine'

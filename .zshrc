@@ -72,3 +72,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
