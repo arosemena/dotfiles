@@ -4,9 +4,6 @@ autoload -Uz compinit && compinit
 autoload -U select-word-style
 select-word-style bash
 
-# General aliases
-alias vimi="vim +'PlugInstall --sync' +qa"
-
 alias x="source ~/dev/swx/switch.sh"
 alias api="cd `~/dev/swx/api.sh`"
 alias xd="cd ~/dev/swx/books"
@@ -49,6 +46,8 @@ set -o vi
 
 alias week="cd ~/dev/data && node week"
 alias year="cd ~/dev/data && node year"
+alias est="cd ~/dev/data && node est"
+alias nm="cd ~/dev/data && node est nm"
 alias g="cd ~/dev/data && node goal"
 
 alias clean-branches="git branch --merged | egrep -v \"(main|master|staging)\" | xargs git branch -d"
@@ -74,3 +73,5 @@ esac
 # pnpm end
 
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export PATH="/Users/rob/.gem/ruby/2.6.0/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
