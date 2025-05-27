@@ -43,7 +43,15 @@ return {
     { '<leader>so',      '<cmd>Telescope vim_options<cr>',                              desc = 'Options' },
     { '<leader>sR',      '<cmd>Telescope resume<cr>',                                   desc = 'Resume' },
     { '<leader><space>', '<cmd>Telescope resume<cr>',                                   desc = 'Resume' },
-    { '<leader>pf',      '<cmd>Telescope find_files<cr>',                               desc = 'Find Files' },
+    {
+      '<leader>pf',
+      function()
+        require('telescope.builtin').find_files({
+          find_command = { 'rg', '--files', '--hidden' },
+        })
+      end,
+      desc = 'Find Files'
+    },
     {
       '<leader>ps',
       function()
