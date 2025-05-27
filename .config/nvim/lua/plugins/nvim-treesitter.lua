@@ -43,7 +43,7 @@ return {
     indent = { enable = true },
     ensure_installed = {
       'lua', 'vim', 'query', 'javascript', 'typescript', 'rust', 'vue', 'html',
-      'yaml',
+      'yaml','kotlin', 'astro'
     },
     incremental_selection = {
       enable = true,

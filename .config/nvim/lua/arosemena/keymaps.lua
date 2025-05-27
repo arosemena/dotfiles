@@ -15,6 +15,9 @@ set('n', '<C-u>', '<C-u>zz')
 -- Save and clipboard
 set('v', '<leader>y', '"*y', {}) -- yank to system clipboard
 set('n', '<leader>w', ':w<CR>')  -- simpler save
+set('n', '<leader>f', function()
+  vim.fn.setreg('"', "> #file:" .. vim.fn.expand("%:p"))
+end)
 
 -- LSP
 set('n', '<leader>l', vim.lsp.buf.format)

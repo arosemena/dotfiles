@@ -25,12 +25,11 @@ export PATH="$ANDROID_HOME/tools/bin:$PATH"
 [ -s "$HOME/.env" ] && source "$HOME/.env"
 
 # If swx is installed load it
-[ -s "$HOME/dev/swx/load.sh" ] && source "$HOME/dev/swx/load.sh"
+# [ -s "$HOME/dev/swx/load.sh" ] && source "$HOME/dev/swx/load.sh"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export GPG_TTY=$(tty)
@@ -48,9 +47,11 @@ alias week="cd ~/dev/data && node week"
 alias year="cd ~/dev/data && node year"
 alias est="cd ~/dev/data && node est"
 alias nm="cd ~/dev/data && node est nm"
-alias g="cd ~/dev/data && node goal"
+alias g="lazygit"
 
 alias clean-branches="git branch --merged | egrep -v \"(main|master|staging)\" | xargs git branch -d"
+alias gg="git branch --merged | egrep -v \"(main|master|staging)\" | xargs git branch -d"
+alias gpr="gh pr create && gh pr view --web"
 
 listening() {
     if [ $# -eq 0 ]; then

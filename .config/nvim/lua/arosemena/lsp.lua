@@ -1,4 +1,3 @@
-
 local organize_imports = function()
   local params = {
     command = '_typescript.organizeImports',
@@ -8,19 +7,25 @@ local organize_imports = function()
 end
 
 
-require('lspconfig').ts_ls.setup {
-  on_attach = function(_, bufnr)
-
-    -- Run Prettier on save
-    local hasPrettier = vim.fn.filereadable('.prettierrc')
-    if hasPrettier ~= 0 then
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        buffer = bufnr,
-        callback = function() vim.cmd.Prettier() end,
-      })
-    end
-
-    -- Add organize imports command
-    vim.keymap.set('n', '<leader>o', organize_imports, { buffer = bufnr })
+local prettierOnSave = function(_, bufnr)
+  -- Run Prettier on save
+  local hasPrettier = vim.fn.filereadable('.prettierrc')
+  if hasPrettier ~= 0 then
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      buffer = bufnr,
+      callback = function() vim.cmd.Prettier() end,
+    })
   end
+
+  -- Add organize imports command
+  vim.keymap.set('n', '<leader>o', organize_imports, { buffer = bufnr })
+end
+
+
+require('lspconfig').ts_ls.setup {
+  on_attach = prettierOnSave
+}
+
+require('lspconfig').astro.setup {
+  on_attach = prettierOnSave
 }

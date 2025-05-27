@@ -19,6 +19,7 @@ return {
         'typescript',
         'typescriptreact',
         'yaml',
+        'astro',
       },
     })
   end,
