@@ -7,13 +7,12 @@ local organize_imports = function()
 end
 
 
-local prettierOnSave = function(_, bufnr)
-  -- Run Prettier on save
-  local hasPrettier = vim.fn.filereadable('.prettierrc')
-  if hasPrettier ~= 0 then
+local on_attach = function(client, bufnr)
+  -- Apply LSP formatting on save if client supports it
+  if client.supports_method('textDocument/formatting') then
     vim.api.nvim_create_autocmd('BufWritePre', {
       buffer = bufnr,
-      callback = function() vim.cmd.Prettier() end,
+      callback = function() vim.lsp.buf.format({ async = false }) end,
     })
   end
 
@@ -23,9 +22,9 @@ end
 
 
 require('lspconfig').ts_ls.setup {
-  on_attach = prettierOnSave
+  on_attach = on_attach
 }
 
 require('lspconfig').astro.setup {
-  on_attach = prettierOnSave
+  on_attach = on_attach
 }
