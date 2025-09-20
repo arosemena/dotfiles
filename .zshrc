@@ -49,9 +49,9 @@ alias est="cd ~/dev/data && node est"
 alias nm="cd ~/dev/data && node est nm"
 alias g="lazygit"
 
-alias clean-branches="git branch --merged | egrep -v \"(main|master|staging)\" | xargs git branch -d"
-alias gg="git branch --merged | egrep -v \"(main|master|staging)\" | xargs git branch -d"
-alias gpr="gh pr create && gh pr view --web"
+alias clean-branches="git branch --merged | egrep -v \"(main|master|staging|stage)\" | xargs git branch -d"
+alias gg="git branch --merged | egrep -v \"(main|master|staging|stage)\" | xargs git branch -d"
+alias gpr="gh pr create && gh pr checks --watch"
 
 listening() {
     if [ $# -eq 0 ]; then
