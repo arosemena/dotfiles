@@ -2,7 +2,7 @@
   name = Roberto Arosemena
 	email = robert@lotus.mx
   username = arosemena
-	signingkey = 5B2491778D736C81CEEF93A0B9770D8B532FEF01
+	signingkey = B9770D8B532FEF01
 [core]
   editor = vim
 	autocrlf = input
