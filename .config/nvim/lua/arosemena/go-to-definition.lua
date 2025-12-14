@@ -24,7 +24,7 @@ local function onList (options)
   end
 
   vim.fn.setqflist({}, ' ', { title = options.title, items = items, context = options.context })
-  vim.api.nvim_command('cfirst') -- or maybe you want 'copen' instead of 'cfirst'
+  vim.api.nvim_command('silent cfirst')
 end
 
 local function goToDef ()

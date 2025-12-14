@@ -25,3 +25,5 @@ vim.opt.colorcolumn = '80'
 
 vim.opt.rnu = true
 vim.opt.nuw = 2
+
+vim.opt.cmdheight = 0

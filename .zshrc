@@ -48,6 +48,7 @@ alias year="cd ~/dev/data && node year"
 alias est="cd ~/dev/data && node est"
 alias nm="cd ~/dev/data && node est nm"
 alias g="lazygit"
+alias cu="pnpm add -g @anthropic-ai/claude-code"
 
 alias clean-branches="git branch --merged | egrep -v \"(main|master|staging|stage)\" | xargs git branch -d"
 alias gg="git branch --merged | egrep -v \"(main|master|staging|stage)\" | xargs git branch -d"
@@ -76,3 +77,4 @@ esac
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="/Users/rob/.gem/ruby/2.6.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH"
